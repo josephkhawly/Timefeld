@@ -22,11 +22,6 @@
                 "file": "fonts/itc-fenice-lt-oblique.ttf",
                 "name": "FONT_FENICE_36",
                 "type": "font"
-            },
-            {
-                "file": "fonts/GLECB.TTF",
-                "name": "FONT_GLOUCESTER_ITALIC_26",
-                "type": "font"
             }
         ]
     },
