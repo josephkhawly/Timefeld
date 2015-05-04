@@ -24,6 +24,7 @@ char quote6[] = "I think I can sum up the show for you with one word: nothing.";
 char quote7[] = "They're real, and they're spectacular.";
 char quote8[] = "Serenity now!";
 char quote9[] = "But are you still master of your domain?";
+//char quote10[] = "A George divided against itself cannot stand."
 char *quotes[10] = {quote0, quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9};
 
 //int r;
@@ -51,16 +52,22 @@ static void update_time() {
 
 static void main_window_load(Window *window) {
   //Create GBitmap, then set to created BitmapLayer
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_TIMEFELD_WHITE);
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_TIMEFELD);
   s_background_layer = bitmap_layer_create(GRect(0, 0, 144, 168));
   bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
-  bitmap_layer_set_background_color(s_background_layer, GColorBlack);
+	bitmap_layer_set_background_color(s_background_layer, GColorClear);
   layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   
   // Create "It's" TextLayer
   s_its_layer = text_layer_create(GRect(0, 12, 144, 50));
   text_layer_set_background_color(s_its_layer, GColorClear);
-  text_layer_set_text_color(s_its_layer, GColorWhite);
+	
+	#ifdef PBL_COLOR
+  	text_layer_set_text_color(s_its_layer, GColorDarkCandyAppleRed);
+	#else
+		text_layer_set_text_color(s_its_layer, GColorBlack);
+	#endif
+	
   s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_FENICE_36));
   text_layer_set_font(s_its_layer, s_time_font);
   text_layer_set_text_alignment(s_its_layer, GTextAlignmentCenter);
@@ -70,7 +77,11 @@ static void main_window_load(Window *window) {
   // Create time TextLayer.
   s_time_layer = text_layer_create(GRect(0, 58, 144, 50));
   text_layer_set_background_color(s_time_layer, GColorClear);
-  text_layer_set_text_color(s_time_layer, GColorBlack);
+	#ifdef PBL_COLOR
+  	text_layer_set_text_color(s_time_layer, GColorDarkCandyAppleRed);
+	#else
+		text_layer_set_text_color(s_time_layer, GColorBlack);
+	#endif
   s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_FENICE_36));
   text_layer_set_font(s_time_layer, s_time_font);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
@@ -79,9 +90,14 @@ static void main_window_load(Window *window) {
   
   //Create the quote TextLayer.
   s_quote_layer = text_layer_create(GRect(0, 120, 144, 50));
-  s_quote_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_FENICE_23));
+  s_quote_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_FENICE_28));
   text_layer_set_background_color(s_quote_layer, GColorClear);
-  text_layer_set_text_color(s_quote_layer, GColorWhite);
+	
+	#ifdef PBL_COLOR
+  	text_layer_set_text_color(s_time_layer, GColorDarkCandyAppleRed);
+	#else
+		text_layer_set_text_color(s_time_layer, GColorWhite);
+	#endif
   text_layer_set_text_alignment(s_quote_layer, GTextAlignmentCenter);
   
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_quote_layer));

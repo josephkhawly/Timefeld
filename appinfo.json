@@ -9,14 +9,14 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/fenice-lt-oblique.ttf",
-                "name": "FONT_FENICE_23",
-                "type": "font"
-            },
-            {
                 "file": "images/timefeld.png",
                 "name": "IMAGE_TIMEFELD",
-                "type": "png-trans"
+                "type": "png"
+            },
+            {
+                "file": "fonts/fenice-lt-oblique.ttf",
+                "name": "FONT_FENICE_28",
+                "type": "font"
             },
             {
                 "file": "fonts/itc-fenice-lt-oblique.ttf",
@@ -25,7 +25,12 @@
             }
         ]
     },
+    "sdkVersion": "3",
     "shortName": "Timefeld",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "3e9715c9-e0af-430f-8373-6c9c11f1b2a3",
     "versionCode": 1,
     "versionLabel": "1.0",
