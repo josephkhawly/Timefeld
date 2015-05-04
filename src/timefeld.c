@@ -94,9 +94,9 @@ static void main_window_load(Window *window) {
   text_layer_set_background_color(s_quote_layer, GColorClear);
 	
 	#ifdef PBL_COLOR
-  	text_layer_set_text_color(s_time_layer, GColorDarkCandyAppleRed);
+  	text_layer_set_text_color(s_quote_layer, GColorDarkCandyAppleRed);
 	#else
-		text_layer_set_text_color(s_time_layer, GColorWhite);
+		text_layer_set_text_color(s_quote_layer, GColorWhite);
 	#endif
   text_layer_set_text_alignment(s_quote_layer, GTextAlignmentCenter);
   
