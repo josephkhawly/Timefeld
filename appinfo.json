@@ -3,7 +3,7 @@
     "capabilities": [
         ""
     ],
-    "companyName": "joseph.khawly@gmail.com",
+    "companyName": "Joseph Khawly",
     "longName": "Timefeld",
     "projectType": "native",
     "resources": {
@@ -32,8 +32,7 @@
         "basalt"
     ],
     "uuid": "3e9715c9-e0af-430f-8373-6c9c11f1b2a3",
-    "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }
